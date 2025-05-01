@@ -21,4 +21,7 @@ print(news_dataset.head())
 print(news_dataset.isnull().sum())
 news_dataset = news_dataset.fillna('')
 
+X = news_dataset.drop(columns='label', axis=1)
+
+Y = news_dataset['label']
 
