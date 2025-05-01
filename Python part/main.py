@@ -25,3 +25,4 @@ X = news_dataset.drop(columns='label', axis=1)
 
 Y = news_dataset['label']
 
+port_stem = PorterStemmer()
