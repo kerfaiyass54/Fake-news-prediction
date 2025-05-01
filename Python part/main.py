@@ -18,4 +18,7 @@ news_dataset = pd.read_csv('D:/projects/Fake news prediction/Python part/fake_re
 print(news_dataset.shape)
 print(news_dataset.head())
 
+print(news_dataset.isnull().sum())
+news_dataset = news_dataset.fillna('')
+
 
