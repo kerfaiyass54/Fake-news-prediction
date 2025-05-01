@@ -9,5 +9,13 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score
 import nltk
 
+nltk.download('stopwords')
+print(stopwords.words('english'))
+
+#Data pre-processing
+
+news_dataset = pd.read_csv('D:/projects/Fake news prediction/Python part/fake_real_news_dataset.csv')
+print(news_dataset.shape)
+print(news_dataset.head())
 
 
