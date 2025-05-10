@@ -15,10 +15,10 @@ print(stopwords.words('english'))
 #Data pre-processing
 
 news_dataset = pd.read_csv('D:/projects/Fake news prediction/Python part/fake_real_news_dataset.csv')
-print(news_dataset.shape)
-print(news_dataset.head())
+#print(news_dataset.shape)
+#print(news_dataset.head())
 
-print(news_dataset.isnull().sum())
+#print(news_dataset.isnull().sum())
 news_dataset = news_dataset.fillna('')
 
 X = news_dataset.drop(columns='label', axis=1)
@@ -32,6 +32,21 @@ def stemming(content):
     stemmed_content = ' '.join([port_stem.stem(word) for word in stemmed_content if not word in stopwords.words('english')])
     return stemmed_content
 
+news_dataset['title'] = news_dataset['title'].apply(stemming)
+news_dataset['author'] = news_dataset['author'].apply(stemming)
+
+news_dataset['content'] = news_dataset['author']+' '+news_dataset['title']
+
+X = news_dataset['content'].values
+Y = news_dataset['label'].values
+
+vectorizer = TfidfVectorizer()
+vectorizer.fit(X)
+
+X = vectorizer.transform(X)
+
+
+print(X)
 
 
 
