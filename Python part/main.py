@@ -26,3 +26,12 @@ X = news_dataset.drop(columns='label', axis=1)
 Y = news_dataset['label']
 
 port_stem = PorterStemmer()
+
+def stemming(content):
+    stemmed_content = re.sub('[^a-zA-Z]',' ',content).lower().split()
+    stemmed_content = ' '.join([port_stem.stem(word) for word in stemmed_content if not word in stopwords.words('english')])
+    return stemmed_content
+
+
+
+
