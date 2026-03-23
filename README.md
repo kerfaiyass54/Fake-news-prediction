@@ -49,7 +49,7 @@ In an era of misinformation, this project provides a **simple yet effective** so
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/yourusername/fake-news-prediction.git
+   git clone https://github.com/kerfaiyass54/fake-news-prediction.git
    cd fake-news-prediction
    ```
 
